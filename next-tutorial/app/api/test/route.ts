@@ -1,11 +1,12 @@
 import { NextRequest, NextResponse } from 'next/server';
-import { resolve } from 'path';
 
 const delay = (ms: number) => new Promise((resolve) => setTimeout(resolve, ms));
 
 export async function GET(request: NextRequest) {
   const randomDelay = Math.floor(Math.random() * 5000);
   console.log('random delay', randomDelay);
+
+  throw new Error();
 
   await delay(randomDelay);
 
